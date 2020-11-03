@@ -1142,6 +1142,9 @@ inspired styles to your `iron-data-table`.
       },
 
       _autoRefreshOnOff: function() {
+        if (this.enableAutoRefresh) {
+          this._refreshData(this.dataSource, this._currentPage);
+        }
         this.fire('refresh-on-off', {refresh : this.enableAutoRefresh});
       }
     });
